@@ -118,7 +118,6 @@ python classification.py train \
   --weight_decay 1e-2 \
   --batch_size 64 \
   --max_epochs 350 \
-  --seed 42
 ```
 
 #### TMCAD
@@ -134,7 +133,6 @@ python classification.py train \
   --weight_decay 1e-2 \
   --batch_size 64 \
   --max_epochs 350 \
-  --seed 42
 ```
 
 ### 2. Machining Feature Recognition / Segmentation
@@ -152,7 +150,6 @@ python segmentation.py train \
   --weight_decay 1e-2 \
   --batch_size 64 \
   --max_epochs 350 \
-  --seed 42
 ```
 
 #### Fusion 360 Gallery
@@ -168,7 +165,6 @@ python segmentation.py train \
   --weight_decay 1e-2 \
   --batch_size 64 \
   --max_epochs 350 \
-  --seed 42
 ```
 
 ### 3. Reproducing Ablation Studies
@@ -236,11 +232,6 @@ You can monitor training with TensorBoard:
 tensorboard --logdir results
 ```
 
-## Notes on Reproducibility
-
-- The paper reports mean and standard deviation over five independent runs.
-- This repository provides a `--seed` argument in both training entry scripts to simplify repeated runs.
-- For strict reproduction, please keep the data split, optimizer, learning rate, batch size, and number of layers consistent with the paper.
 
 ## Citation
 
