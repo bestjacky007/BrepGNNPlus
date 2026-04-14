@@ -191,7 +191,6 @@ python segmentation.py train \
   --no_ffn \
   --lr 5e-3 \
   --max_epochs 350 \
-  --seed 42
 ```
 
 ## Testing
