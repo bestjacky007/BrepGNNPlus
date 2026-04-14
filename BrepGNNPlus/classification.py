@@ -24,7 +24,6 @@ parser.add_argument("--lr_scheduler", type=str, default="cosine", choices=("cosi
 parser.add_argument("--lr", type=float, default=1e-3)
 parser.add_argument("--weight_decay", type=float, default=1e-2)
 # parser.add_argument("--seed", type=int, default=42)
-parser.add_argument("--gpu_id", type=int, default=0, help="使用的 GPU 编号 (0-indexed)")
 
 # GNN Architecture
 parser.add_argument("--gnn_type", type=str, default="gcn",
@@ -78,7 +77,6 @@ checkpoint_callback_accuracy = ModelCheckpoint(
 
 trainer = Trainer.from_argparse_args(
     args,
-    gpus=[args.gpu_id],  # 单卡训练，通过 --gpu_id 指定显卡编号
     callbacks=[checkpoint_callback_loss, checkpoint_callback_accuracy],
     logger=TensorBoardLogger(str(results_path), name=month_day, version=hour_min_second),
     resume_from_checkpoint=args.checkpoint,
