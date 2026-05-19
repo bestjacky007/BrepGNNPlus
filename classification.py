@@ -68,11 +68,11 @@ ckpt_dir = str(results_path.joinpath(month_day, hour_min_second))
 
 checkpoint_callback_loss = ModelCheckpoint(
     monitor="val_loss", dirpath=ckpt_dir,
-    filename="best-loss-{epoch:02d}-{val_loss:.4f}", save_top_k=1, mode='min', save_last=True,
+    filename="best-loss", save_top_k=1, mode='min', save_last=True,
 )
 checkpoint_callback_accuracy = ModelCheckpoint(
     monitor='val_acc', dirpath=ckpt_dir,
-    filename='best-accuracy-{epoch:02d}-{val_acc:.4f}', save_top_k=1, mode='max'
+    filename='best-accuracy', save_top_k=1, mode='max'
 )
 
 trainer = Trainer.from_argparse_args(
