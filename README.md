@@ -105,20 +105,6 @@ All results in the paper use BrepGNN+ with a modernized GNN backbone. The defaul
 
 ### 1. Part Classification
 
-#### SolidLetters
-
-```bash
-python classification.py train \
-  --dataset solidletters \
-  --dataset_path /path/to/solidletters \
-  --experiment_name brepgnn_solidletters \
-  --gnn_type gcn \
-  --num_layers 12 \
-  --lr 5e-3 \
-  --weight_decay 1e-2 \
-  --batch_size 64 \
-  --max_epochs 350 \
-```
 
 #### TMCAD
 
